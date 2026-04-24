@@ -5,7 +5,7 @@ metadata:
     app: test-app-rollout
   name: test-app-rollout
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: test-app-rollout
