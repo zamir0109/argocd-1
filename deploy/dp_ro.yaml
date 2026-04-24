@@ -15,8 +15,8 @@ spec:
         app: test-app
     spec:
       containers:
-      - image: alpine
-        name: alpine
+      - image: busybox
+        name: busybox
         command: ["sleep", "infinity"]
         resources: {}
   strategy:
