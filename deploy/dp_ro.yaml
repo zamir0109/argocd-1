@@ -2,25 +2,25 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   labels:
-    app: test-app
-  name: test-app
+    app: test-app-rollout
+  name: test-app-rollout
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: test-app
+      app: test-app-rollout
   template:
     metadata:
       labels:
-        app: test-app
+        app: test-app-rollout
     spec:
       containers:
-      - image: busybox
-        name: busybox
+      - image: alpine
+        name: alpine
         command: ["sleep", "infinity"]
         resources: {}
   strategy:
-    canary:                        # Changed from rollingUpdate or recreate
+    canary:                        
       steps:
       - setWeight: 20
       - pause: {}
